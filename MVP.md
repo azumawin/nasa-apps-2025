@@ -8,19 +8,6 @@ Develop an interactive visualization and simulation tool that uses real data fro
 | `/api/simulations`       | POST   | Normalize inputs → compute unique ID → check DB → create or reuse simulation. | `{ "lat": 52.1, "lon": 21.0, "size_m": 500, "speed_kms": 20.0, "impact_angle_deg": 90 }`                   | **If exists:** `{"id":"sim_xxx"}` + `Location: /api/simulations/sim_xxx`<br>**If new:** `{"id":"sim_xxx","inputs":{...},"outputs":{...}}` | 303 See Other (exists)<br>201 Created (new)<br>400/422 (invalid input) |
 | `/api/simulations/<id>`  | GET    | Fetch a simulation by ID. Returns inputs + outputs stored in DB.            | N/A                                                                                                        | `{"id":"sim_xxx","inputs":{...},"outputs":{...}}`                                                            | 200 OK<br>304 Not Modified (with ETag)<br>404 Not Found |
 
-# Example front end routes (up to front end devs to decide what to actually use in reality)
-| Frontend Route        | Method | Description                                             | Returns  | Status Codes     |
-|-----------------------|--------|---------------------------------------------------------|----------|------------------|
-| `/`                   | GET    | Landing page with form to collect parameters & location | HTML/JS  | 200 OK           |
-| `/simulations/<id>`   | GET    | Viewer page; calls `GET /api/simulations/<id>` to render| HTML/JS  | 200 OK<br>404 Not Found |
-
-
-1. `/` gets location, asteroid characteristics from user input,then does `POST /api/simulations`
-2. `/api/simulations` normalizes input (defaults, rounding, sorted keys, normalized units) -> computes unique id by hashing the normalized JSON -> looks for that id in db:
-	1. if id exists in db -> return `303 See other` with `Location: /api/simulations/<id>`
-	2. if id doesn't exist in db -> run simulation, store the parameters and simulation calculations as a record keyed by id inside the db, return `201 Created` with `Location: /api/simulations/<id>`
-3. Client: upon 303/201/200 -> redirect to `/simulations/<id>` which fetches `GET /api/simulations/<id>`
-
 # Parameters
 Parameters depend on what we want to compute, so let's decide that first.\
 METRICS:
