@@ -91,7 +91,7 @@ The U.S. Geological Survey (USGS) offers environmental and geological datasets (
 # Questions
 ## What are the judges actually looking for?
 I think they're looking for an idea that:
-- is feasable, can actually be executed and extended
+- is feasible, can actually be executed and extended
 - scientific correctness (use of reserach papers, lots of quantitative figures, for example detailing the estimations made when creating the app and the resulting approximation errors, etc.)
 - appeal to a wide audience (at the end of the day they probably just want to familiarize as many people with the problem as possible to generate funding for their departament, so how marketable our app is also might play a role)
 - robustness and error handling - how reliable is the app really?
