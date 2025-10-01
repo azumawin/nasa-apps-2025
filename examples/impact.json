@@ -1,4 +1,5 @@
 {
+  "id": "sha256:...",
   "map": {
     "center": {"lat": 40.1200, "lon": -119.6200},
     "crater_transient_diameter_m": 1800,
