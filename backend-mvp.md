@@ -4,7 +4,7 @@ Develop an interactive visualization and simulation tool that uses real data fro
 ## API Endpoints
 | Method | Endpoint                | Params | Description                                                                 | Status Codes                              |
 |--------|--------------------------|--------|-----------------------------------------------------------------------------|-------------------------------------------|
-| POST   | `/api/simulations`         | TBD    | Compute simulation params (hash normalized inputs to get id, check DB if id already exists, if it doesn't - compute params for that id) and return id, input params, computed params. | 200 OK; 400 Bad Request; 422 Unprocessable Entity |
+| POST   | `/api/simulations`         | check inputs    | Compute simulation params (hash normalized inputs to get id, check DB if id already exists, if it doesn't - compute params for that id) and return id, input params, computed params. | 200 OK; 400 Bad Request; 422 Unprocessable Entity |
 | GET    | `/api/simulations/{id}`    | id (path) | Fetch simulation params by ID. Returns stored input params + computed params. | 200 OK; 304 Not Modified; 404 Not Found    |
 
 # Input
