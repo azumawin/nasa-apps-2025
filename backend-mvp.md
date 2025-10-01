@@ -8,7 +8,7 @@ Develop an interactive visualization and simulation tool that uses real data fro
 | GET    | `/api/simulations/{id}`    | id (path) | Fetch simulation params by ID. Returns stored input params + computed params. | 200 OK; 304 Not Modified; 404 Not Found    |
 
 # Input
-
+request POST can be found in `examples/`
 The backend receives these params:
 - asteroid diameter
 - asteroid material density (frontend can add basic presets to make it easier to use e.g. rock, crystal, iron, etc.)
