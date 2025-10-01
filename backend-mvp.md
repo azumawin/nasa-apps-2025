@@ -37,6 +37,28 @@ The backend receives these params:
 
 example jsons in `examples/`.
 
+# Backend parts ig
+## `normalize_params()`
+a function that takes all parameters relevant to the simulation (JSON or already parsed dict) and returns a normalized JSON, so that we can create a unique id for that unique set of parameters.
+
+normalization should:
+- fill in defaults where user didn't provide something
+- validate types
+- normalize units to SI (maybe not needed depending on frontend)
+- round floats to some agreed upon precision so that we can get away without recomputing same simulations with just tiny differences in float (though will need to put approximation error percentage in the docs - physicist's job)
+- anything else?
+
+## `compute_id()`
+ a function that takes in a json and hashes it using sha256 (deterministic, collision resistant, fast) to return a hash which we will use as an id.
+
+## `simulation_exists(id)`
+a function that returns true if an id is in the database, false if not
+
+## `run_simulation(normalized_params)`
+a function that takes in the normalized JSON and returns JSON (metrics, trajectory), GEOJSON (craters, etc.)
+
+## `write_simulation_to_db()` or `persist_data()`
+a function that takes in `id, normalized_params, outputs` and writes them to the database
 need physicists help for trajectory/deflection
 
 
