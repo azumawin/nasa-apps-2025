@@ -1,6 +1,7 @@
 # JSON structure
 ```json
 {
+  "id": "sha256:...",
   "map": {
     "center": {"lat": 0, "lon": 0},
     "crater_transient_diameter_m": null,
