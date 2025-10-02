@@ -1,6 +1,5 @@
-from rest_framework import serializers
-
 from asteroid.models import Asteroid
+from rest_framework import serializers
 
 
 class BriefAsteroidSerializer(serializers.HyperlinkedModelSerializer):
