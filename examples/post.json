@@ -2,7 +2,7 @@
   "inputs": {
     "diameter_m": 120.0,
     "density_kg_m3": 3000,
-    "material_type": "sedimentary rock"
+    "material_type": "sedimentary rock",
     "entry_speed_m_s": 20000.0,
     "entry_angle_deg": 45.0,
     "azimuth_deg": 90.0,
