@@ -7,6 +7,5 @@
     "entry_angle_deg": 45.0,
     "azimuth_deg": 90.0,
     "aim_point": {"lat": 39.95, "lon": -119.8},
-    "target_surface": "land"
   }
 }
